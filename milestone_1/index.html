@@ -14,11 +14,13 @@
     <!-- link css -->
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
+
   <body>
-      <div id="rigaSfondo"></div>
-        <div id="posizione">
+      <div id="striscia"></div>
+        <div id="app">
             <div id="containerNav">
                 <nav>
+                    <!-- profilo utente -->
                     <section class="profilo">
                         <div class="avatar">
                             <img class="imgAvatar" src="./assets/img/avatar_io.jpg" alt="">
@@ -30,7 +32,9 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </section> 
+                    <!-- /profilo utente -->
 
+                    <!-- notifiche -->
                     <section class="notifiche">
                         <div class="circle">
                             <i class="fas fa-bell-slash"></i>
@@ -40,29 +44,56 @@
                             <link>Attiva notifiche desktop</link>
                         </div>
                     </section> 
+                    <!-- /notifiche -->
 
+                    <!-- ricerca -->
                     <section class="ricerca">
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <i class="fas fa-search"></i>
                     </section> 
+                    <!-- /ricerca -->
 
+                    <!-- lista utenti -->
                     <section class="listaUtenti">
-                        <div id="user"></div>
+                        <div class="users" v-on:click='chat' v-for="(user,index) in users" v-for='(name,index) in names'>
+                            <img class="imgAvatar" :src="users[index]" alt="">
+                            <h6 :class='names[index]'>{{names[index]}}</h6>
+                        </div>
                     </section>
+                    <!-- /lista utenti -->
                 </nav>
             </div>
-            <div id="containerMain">
 
+            <div id="containerMain">
+                <!-- chat user -->
                 <div class="chatUser">
-                    
+                    <div class="chat" v-for='(chat,index) in chatCurrent'>
+                        <img class="imgAvatar" :src="chatCurrent[index]" alt="">
+                        <div class="date">
+                            <h6></h6>
+                            <span>ultimo accesso oggi alle</span>
+                        </div>
+                    </div>
+                    <div class="set">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
-                
+                <!-- /chat user -->
+
+                <!-- main chat -->
                 <div class="mainChat">
-                    
                 </div>
+                <!-- /main chat -->
                 
+                <!-- controll chat -->
                 <div class="controllChat">
-                    
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
                 </div>
+                <!-- /controll chat -->
             </div>    
         </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

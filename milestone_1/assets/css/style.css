@@ -8,15 +8,19 @@ body{
     background-color: rgba(214, 219, 215, 1);
 }
 
+i{
+    cursor: pointer;
+}
+
 /* struttura base */
-#rigaSfondo{
+#striscia{
     background-color: rgba(0, 150, 136, 1);
     height: 100px;
     width: 100vw;
     z-index: 0;
 }
 
-#posizione{
+#app{
     width: 80vw;
     height: 90vh;
     margin: auto;
@@ -47,18 +51,26 @@ nav{
     height: 85px;
     width: 100%;
     background-color: rgba(243, 238, 234, 1);
+    border-left: 0.5px solid lightgray;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
 .mainChat{
     height: calc(100% - 170px);
     width: 100%;
-    background-image: url('./assets/img/mine.jpg');
+    background-image: url('../img/mine.jpg');
+    overflow-y: auto;
 }
 
 .controllChat{
     height: 85px;
     width: 100%;
     background-color:rgba(243, 238, 234, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 /* /struttura base */
 
@@ -97,7 +109,8 @@ nav{
 .listaUtenti{
     width: 100%;
     height: calc(100% - 220px);
-    background-color: green;
+    background-color: white;
+    overflow-y: auto;
 }
 
 /* /struttura nav */
@@ -146,6 +159,76 @@ i{
 .ricerca input{
     width: 100%;
     height: 100%;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    padding: 0 50px;
+}
+
+.ricerca i{
+    position: absolute;
+    left: 12px;
+    font-size: 1.2rem;
 }
 /* /ricerca */
 
+
+/* lista utenti */
+.users{
+    border-bottom: 0.5px solid lightgray;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.listaUtenti h6{
+    margin: 0 20px;
+}
+/* /lista utenti */
+
+
+/* chatUser */
+.chat{
+    width: 50%;
+    display: flex;
+}
+
+.set{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.set i{
+    margin: 10px;
+}
+
+.chat h6{
+    margin: 0;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+/* /chatUser */
+
+
+/* mainChat */
+
+/* /mainChat */
+
+
+/* controllChat */
+
+.controllChat input{
+    width: 90%;
+    height: 70%;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.controllChat i{
+    color: rgba(107, 115, 118, 1) ;
+}
