@@ -61,7 +61,7 @@ nav{
     height: calc(100% - 170px);
     width: 100%;
     background-image: url('../img/mine.jpg');
-    overflow-y: auto;
+    overflow-y:scroll;
 }
 
 .controllChat{
@@ -110,7 +110,7 @@ nav{
     width: 100%;
     height: calc(100% - 220px);
     background-color: white;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 /* /struttura nav */
@@ -179,10 +179,6 @@ i{
     padding: 10px 20px;
     display: flex;
 }
-
-.listaUtenti h6{
-    margin: 0 20px;
-}
 /* /lista utenti */
 
 
@@ -212,6 +208,13 @@ i{
     justify-content: flex-end;
 }
 
+.date span{
+    color: grey;
+}
+
+.users span::after{
+    content: '...';
+}
 /* /chatUser */
 
 

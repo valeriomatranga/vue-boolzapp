@@ -55,10 +55,10 @@
 
                     <!-- lista utenti -->
                     <section class="listaUtenti">
-                        <div class="users" v-for="(contact,index) in contacts" @:click='changeContact(contact(index))' :key='contact.name' >
+                        <div class="users" v-for="(contact,index) in contacts" @:click='changeContact(index)':key='contact.name' >
                             <img class="imgAvatar" :src=" './assets/img/avatar' + contact.avatar + '.jpg' " alt="">
                             <div class="date">
-                                <span>{{contact.name}}</span>
+                                <h6>{{contact.name}}</h6>
                                 <span>{{contacts[currentContact].messages[contacts[currentContact].messages.length-1].text}}</span>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                     <div class="chat">
                         <img class="imgAvatar" :src=" './assets/img/avatar' + contacts[currentContact].avatar + '.jpg' " alt="">
                         <div class="date">
-                            <span>{{contacts[currentContact].name}}</span>
+                            <h6>{{contacts[currentContact].name}}</h6>
                             <span>ultimo accesso oggi alle {{contacts[currentContact].messages[contacts[currentContact].messages.length-1].date}}</span>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
 
                 <!-- main chat -->
                 <div class="mainChat">
-                    {{contacts[currentContact].messages}}
+                    {{currentContact}}
                 </div>
                 <!-- /main chat -->
                 
