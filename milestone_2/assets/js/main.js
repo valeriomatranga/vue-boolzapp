@@ -92,4 +92,10 @@ const app = new Vue({
     ]
     },
 
+
+    methods:{
+        changeContact(index){
+        this.currentContact = index;
+        }
+    },
 })
