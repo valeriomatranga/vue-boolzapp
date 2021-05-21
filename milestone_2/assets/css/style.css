@@ -61,7 +61,7 @@ nav{
     height: calc(100% - 170px);
     width: 100%;
     background-image: url('../img/mine.jpg');
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 
 .controllChat{
@@ -219,6 +219,23 @@ i{
 
 
 /* mainChat */
+.received{
+    background-color: rgba(213, 249, 186, 1);
+    padding: 10px;
+    display: inline-block;
+    float: right;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.sent{
+    background-color: white;
+    padding: 10px;
+    display: block;
+    margin: 20px;
+    border-radius: 5px;
+
+}
 
 /* /mainChat */
 
