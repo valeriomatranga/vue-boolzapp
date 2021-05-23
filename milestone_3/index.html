@@ -99,7 +99,7 @@
                 <!-- controll chat -->
                 <div class="controllChat">
                     <i class="far fa-smile"></i>
-                    <input placeholder="Scrivi un messaggio">
+                    <input @keyup.enter='insertMessage' v-model='message' placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
                 <!-- /controll chat -->

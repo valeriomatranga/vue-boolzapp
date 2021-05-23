@@ -98,7 +98,29 @@ const app = new Vue({
         changeContact(index){
         this.currentContact = index;
         },
+
+        insertMessage(){
+            newMessage = {};
+            newMessage.date = data,
+            newMessage.text = this.message;
+            newMessage.status = 'sent';
+            //console.log(newMessage);
+            this.contacts[this.currentContact].messages.push(newMessage);
+            this.message = '';
+
+            setTimeout(() => {
+                risposta = {
+                    date: data,
+                    text: 'ok',
+                    status: 'received'
+                };
+                
+                this.contacts[this.currentContact].messages.push(risposta);
+                
+            }, 1000)
+        }
         
     },
 })
 
+var data = new Date();
