@@ -48,14 +48,14 @@
 
                     <!-- ricerca -->
                     <section class="ricerca">
-                        <input type="text" v-model="ricerca" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="ricerca" @keyup='search' placeholder="Cerca o inizia una nuova chat">
                         <i class="fas fa-search"></i>
                     </section> 
                     <!-- /ricerca -->
 
                     <!-- lista utenti -->
                     <section class="listaUtenti">
-                        <div class="users" :class="currentContact === index ? 'active' : '' " v-for="(contact,index) in filterContact" @click='changeContact(index)':key='contact.name' >
+                        <div class="users" :class="currentContact === index ? 'active' : '' " v-for="(contact,index) in contacts" v-if="contact.visible" @click='changeContact(index)':key='contact.name' >
                             <img class="imgAvatar" :src=" './assets/img/avatar' + contact.avatar + '.jpg' " alt="">
                             <div class="date">
                                 <h6>{{contact.name}}</h6>

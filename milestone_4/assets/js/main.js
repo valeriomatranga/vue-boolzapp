@@ -120,16 +120,21 @@ const app = new Vue({
             }, 1000)
         },
 
+        search(){
+            const ricercaContatto = this.ricerca.toLowerCase();
+            this.contacts.forEach(contact => {
+                let nomeContatto = contact.name.toLowerCase()
+                if(nomeContatto.includes(ricercaContatto)){
+                    contact.visible = true;
+                }else{
+                    contact.visible = false;
+                } 
+            }); 
+        }
+
         
     },
 
-    computed:{
-        filterContact(){
-            return this.contacts.filter((contact)=>{
-                return contact.name.math(this.ricerca);
-            });
-        }
-    }
 })
 
 var data = new Date();
