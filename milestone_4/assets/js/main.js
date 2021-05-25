@@ -101,7 +101,7 @@ const app = new Vue({
 
         insertMessage(){
             newMessage = {};
-            newMessage.date = data,
+            newMessage.date = dayjs().format('DD/MM/YYYY hh:mm:ss'),
             newMessage.text = this.message;
             newMessage.status = 'sent';
             //console.log(newMessage);
@@ -110,14 +110,14 @@ const app = new Vue({
 
             setTimeout(() => {
                 risposta = {
-                    date: data,
+                    date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
                     text: 'ok',
                     status: 'received'
                 };
                 
                 this.contacts[this.currentContact].messages.push(risposta);
                 
-            }, 1000)
+            },1000)
         },
 
         search(){

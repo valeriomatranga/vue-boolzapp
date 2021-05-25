@@ -87,11 +87,9 @@
 
                 <!-- main chat -->
                 <div class="mainChat clearfix" >
-                    <div v-for='element in contacts[currentContact].messages'>
-                        <div :class='element.status'>
-                            <span >{{element.text}}</span> <br>
-                            <span class="orario" >{{element.date}}</span>
-                        </div>
+                    <div v-for='element in contacts[currentContact].messages' :class='element.status'>
+                        <span >{{element.text}}</span> <br>
+                        <span class="orario" >{{element.date}}</span>
                     </div>
                 </div>
                 <!-- /main chat -->
@@ -103,11 +101,12 @@
                     <i class="fas fa-microphone"></i>
                 </div>
                 <!-- /controll chat -->
+                
             </div>    
         </div>
+        <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <script>dayjs().format('DD/MM/YYYY hh:mm:ss')</script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script>dayjs().locale('it').format()</script>
   </body>
 </html>
